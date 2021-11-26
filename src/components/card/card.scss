@@ -1,0 +1,23 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    width: 300px;
+
+    img{
+        width: 150px;
+        height: 150px;
+    }
+
+    &:hover{
+        box-shadow: 5px 10px 10px rgba(175, 175, 175, 0.8);
+        cursor: pointer;
+    }
+
+    .product-colors{
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
