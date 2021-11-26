@@ -1,14 +1,14 @@
-nav{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 25px;
-    border-bottom: 1px solid black;
+nav {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding: 25px;
+	border-bottom: 1px solid black;
 
-    .product-detail{
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-    }
+	.product-detail {
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+	}
 }
