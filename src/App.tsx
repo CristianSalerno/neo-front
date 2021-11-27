@@ -29,7 +29,7 @@ function App() {
 	}, []);
 
 	if (error) {
-		return <>Error: {{ error }}</>;
+		return <>Error: {error}</>;
 	} else {
 		return isLoading ? (
 			<div className="loading">
