@@ -2,16 +2,18 @@ import React from 'react';
 import './card.scss';
 
 interface CardProps {
-	id: number;
-	brand: string;
-	name: string;
-	price: string;
-	price_sign: string;
-	image_link: string;
-	product_link: string;
-	description: string;
-	tag_list: string[];
-	product_colors: string[];
+	products: {
+		id: number;
+		brand: string;
+		name: string;
+		price: string;
+		price_sign: string;
+		image_link: string;
+		product_link: string;
+		description: string;
+		tag_list: string[];
+		product_colors: string[];
+	};
 }
 
 const Card: React.FunctionComponent<CardProps> = props => {

@@ -6,7 +6,7 @@ import Detail from './pages/detail/Detail';
 
 function App() {
 	const [error, setError] = useState('');
-	const [isLoading, setIsLoading] = useState(false);
+	const [isLoading, setIsLoading] = useState(true);
 	const [apiData, setApiData] = useState([]);
 
 	useEffect(() => {
@@ -17,11 +17,11 @@ function App() {
 				.then(response => response.json())
 				.then(
 					result => {
-						setIsLoading(true);
+						setIsLoading(false);
 						setApiData(result);
 					},
 					error => {
-						setIsLoading(true);
+						setIsLoading(false);
 						setError(error);
 					},
 				);
@@ -31,7 +31,7 @@ function App() {
 	if (error) {
 		return <>Error: {{ error }}</>;
 	} else {
-		return !isLoading ? (
+		return isLoading ? (
 			<div className="loading">
 				<h1> Loading ... </h1>
 			</div>

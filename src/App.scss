@@ -10,37 +10,3 @@
 	align-items: center;
 	height: 100vh;
 }
-
-.select-wrapper {
-	position: relative;
-	width: 350px;
-	// Dropdown icon
-	&::after {
-		color: black;
-		content: '▾';
-		margin-right: 10px;
-		pointer-events: none;
-		position: absolute;
-		right: 10px;
-		top: 7px;
-		font-size: 20px;
-	}
-}
-
-select {
-	-moz-appearance: none;
-	-webkit-appearance: none;
-	border-radius: 0;
-	cursor: pointer;
-	padding: 12px;
-	width: 100%;
-	font-size: 18px;
-	border: 1px solid rgb(187, 187, 187);
-	&:focus {
-		color: black;
-	}
-
-	&::-ms-expand {
-		display: none;
-	}
-}
