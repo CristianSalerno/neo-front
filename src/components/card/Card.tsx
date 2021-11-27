@@ -43,6 +43,7 @@ const Card: React.FunctionComponent<CardProps> = props => {
 								width: '15px',
 								height: '15px',
 								borderRadius: '50%',
+								marginLeft: '5px',
 							}}
 						></div>
 					);
