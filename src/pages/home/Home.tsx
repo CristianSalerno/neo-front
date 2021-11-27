@@ -33,7 +33,7 @@ const Home = props => {
 					<div
 						key={key}
 						onMouseOver={() => setProductData(item)}
-						onMouseLeave={() => setProductData('')}
+						onMouseLeave={() => setProductData(null)}
 					>
 						<Link to={`/detail/${item.id}`} state={item}>
 							<Card product={item} />

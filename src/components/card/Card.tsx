@@ -1,8 +1,12 @@
 import React from 'react';
 import './card.scss';
 
+interface ProductColors {
+	hex_value: string;
+}
+
 interface CardProps {
-	products: {
+	product: {
 		id: number;
 		brand: string;
 		name: string;
@@ -12,7 +16,8 @@ interface CardProps {
 		product_link: string;
 		description: string;
 		tag_list: string[];
-		product_colors: string[];
+		product_colors: ProductColors[];
+		category: string;
 	};
 }
 
