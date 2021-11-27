@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import Card from './components/card/Card';
 import Navbar from './components/navbar/Navbar';
 import './App.scss';
+import Home from './pages/home/Home';
 
 function App() {
 	const [error, setError] = useState('');
 	const [isLoading, setIsLoading] = useState(false);
 	const [apiData, setApiData] = useState([]);
-	const [productData, setProductData] = useState(null);
 
 	useEffect(() => {
 		const fetchApiData = () =>
@@ -37,22 +37,7 @@ function App() {
 				<h1> Loading ... </h1>
 			</div>
 		) : (
-			<div className="app-wrapper">
-				<Navbar product={productData} />
-				<div className="list-wrapper">
-					{apiData.map((item, key) => (
-						<div
-							key={key}
-							onMouseOver={() => setProductData(item)}
-							onMouseLeave={() => setProductData('')}
-						>
-							<Link to={`/detail/${item.id}`} state={item}>
-								<Card product={item} />
-							</Link>
-						</div>
-					))}
-				</div>
-			</div>
+			<Home products={apiData} />
 		);
 	}
 }
