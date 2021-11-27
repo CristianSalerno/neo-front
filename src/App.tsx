@@ -1,23 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import Home from './pages/home/Home';
 import './App.scss';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Detail from './pages/detail/Detail';
 
 function App() {
 	const [error, setError] = useState('');
 	const [isLoading, setIsLoading] = useState(false);
 	const [apiData, setApiData] = useState([]);
-	const [dataFiltered, setDataFiltered] = useState([]);
-
-	const filterProducts = (filterType: string) => {
-		if (filterType !== 'all') {
-			debugger;
-			setDataFiltered(
-				apiData.filter(product => product.product_type === filterType),
-			);
-		} else {
-			setDataFiltered(apiData);
-		}
-	};
 
 	useEffect(() => {
 		const fetchApiData = () =>
@@ -29,7 +19,6 @@ function App() {
 					result => {
 						setIsLoading(true);
 						setApiData(result);
-						setDataFiltered(result);
 					},
 					error => {
 						setIsLoading(true);
@@ -48,15 +37,12 @@ function App() {
 			</div>
 		) : (
 			<>
-				<div className="select-wrapper">
-					<select name="filter" onChange={e => filterProducts(e.target.value)}>
-						<option value="all">all</option>
-						<option value="mascara">Mask</option>
-						<option value="eyeliner">Eyeliner</option>
-					</select>
-				</div>
-
-				<Home products={dataFiltered} />
+				<Router>
+					<Routes>
+						<Route path="/" element={<Home products={apiData} />} />
+						<Route path="detail/:id" element={<Detail />} />
+					</Routes>
+				</Router>
 			</>
 		);
 	}
